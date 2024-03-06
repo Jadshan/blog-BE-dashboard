@@ -1,0 +1,14 @@
+header {
+  height: 100px;
+  position: absolute;
+  top: 0;
+}
+
+.logo {
+  padding: 5px 20px;
+  border-radius: 20px;
+  background-color: rgb(158, 158, 192);
+  color: black;
+  font-size: 1.5em;
+  font-weight: bolder;
+}

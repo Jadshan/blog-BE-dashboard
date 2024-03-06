@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap");
+@import "~ngx-toastr/toastr";
+
+:root {
+  --primary-c: rgba(14, 80, 187, 0.84);
+  --secondary-c: #d6f8f7f2;
+  --body-text-c: rgb(228, 227, 237);
+  --navbar-footer-c: rgb(66, 221, 66);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  color: var(--body-text-c);
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.bg-theme {
+  background-color: rgb(30, 156, 45);
+}
+
+.shadow-effect {
+  border: none;
+  box-shadow: 0px 0px 33px -10px rgba(71, 114, 254, 0.3);
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

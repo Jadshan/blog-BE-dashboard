@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <mat-card>
+        <mat-card-content>
+          <h3>All Blog Posts</h3>
+          <p>Manage your all posts here</p>
+          <button mat-button color="primary" routerLink="/newPost">Add New Post</button>
+          <button mat-button color="warn" routerLink="/">Back to Dash board</button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="row p-3">
+    <div class="col-md-12 ">
+      <mat-card>
+        <mat-card-content>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Post Image</th>
+                <th>Title</th>
+                <th>Excerpt</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let post of postDataArray; let i = index">
+
+                <td>{{i+1}}</td>
+                <td width="10"><img src="{{post.data.postImgPath}}" class="img img-fluid"></td>
+                <td width="200">{{post.data.title}}</td>
+                <td width="200">{{post.data.excerpt}}</td>
+                <td width="100">{{post.data.category.category}}</td>
+                <td>{{post.data.createAt.toMillis() | date}}</td>
+                <td><button type="button" class="btn btn-warning" routerLink="/newPost"
+                    [queryParams]="{id: post.id}">Edit</button>
+                  <button type="button" class="btn btn-danger"
+                    (click)="onDelete(post.id,post.data.postImgPath)">Delete</button>
+                  <button *ngIf="!post.data.isFeatured" type="button" class="btn btn-success"
+                    (click)="onFeatured(post.id, true)">Mark Feature</button>
+                  <button *ngIf="post.data.isFeatured" type="button" class="btn btn-info"
+                    (click)="onFeatured(post.id, false)">Remove Featured</button>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+</div>
